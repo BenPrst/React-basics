@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const TodoAdd = () => {
+  const inputRef = useRef();
+  function clickHandler() {
+    const inputElement = inputRef.current;
+  }
   return (
     <div>
-      <form action="">
-        <input type="text" />
-        <button>Add Todo</button>
-      </form>
+      <input ref={inputRef} type="text" />
+      <br />
+      <button onClick={clickHandler}>Add Todo</button>
     </div>
   );
 };
