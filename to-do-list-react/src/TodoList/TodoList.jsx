@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
   const [checked, setChecked] = useState(false);
   const handleChange = () => {
     console.log("Test");
@@ -11,12 +11,11 @@ const TodoList = () => {
     <div>
       <h2>Todos</h2>
       <ul>
-        <li>
-          <input type="checkbox" onChange={handleChange} /> Learn React
-        </li>
-        <li>
-          <input type="checkbox" onChange={handleChange} /> Be Awesome!
-        </li>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            <input type="checkbox" onChange={handleChange} /> {todo}
+          </li>
+        ))}
       </ul>
     </div>
   );

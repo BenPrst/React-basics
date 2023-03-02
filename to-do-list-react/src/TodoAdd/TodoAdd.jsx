@@ -1,10 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 
-const TodoAdd = () => {
-  const inputRef = useRef();
-  function clickHandler() {
-    const inputElement = inputRef.current;
-  }
+const TodoAdd = ({ clickHandler, inputRef }) => {
   return (
     <div>
       <input ref={inputRef} type="text" />
