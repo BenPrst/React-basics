@@ -1,16 +1,15 @@
 import React from "react";
 import "./App.scss";
-import Header from "./components/Header/Header";
-import Suggestion from "./components/Suggestion/Suggestion";
-import Trending from "./components/Trending/Trending";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Suggestion />
-      <Trending />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/test" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
