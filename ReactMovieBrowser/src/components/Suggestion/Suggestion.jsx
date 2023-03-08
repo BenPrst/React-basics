@@ -37,22 +37,20 @@ const Suggestion = () => {
         <p>Loading...</p>
       ) : (
         <div className="suggestion">
-          <div className="suggestions-box">
-            {trailerKey ? (
-              <iframe
-                title="Movie Trailer"
-                src={`https://www.youtube.com/embed/${trailerKey}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
-                alt=""
-              />
-            )}
-          </div>
+          {trailerKey ? (
+            <iframe
+              title="Movie Trailer"
+              src={`https://www.youtube.com/embed/${trailerKey}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+              alt=""
+            />
+          )}
         </div>
       )}
     </>
