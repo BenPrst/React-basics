@@ -1,5 +1,36 @@
-.searchFilms {
-  input {
-    color: black;
+.search-films {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input {
+  width: 90%;
+  height: 35px;
+  align-self: center;
+  background-color: #2c2a41;
+  border: rgb(78, 78, 78) solid 1px;
+  color: white;
+  font-size: 120%;
+  text-align: center;
+}
+
+.films-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  li {
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    margin: 2%;
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
   }
+}
+
+.films-title {
+  text-align: center;
 }

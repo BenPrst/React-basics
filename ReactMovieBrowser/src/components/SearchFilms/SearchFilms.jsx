@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFetch from "react-fetch-hook";
+import "./SearchFilms.scss";
 
 const SearchFilms = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -8,26 +9,28 @@ const SearchFilms = () => {
   const { isLoading, data } = useFetch(API_URL);
 
   return (
-    <div>
-      <h2>Search</h2>
+    <div className="search-films">
       <input
         type="search"
         onChange={(e) => setSearchTerm(e.target.value)}
         name=""
         id=""
+        placeholder="Star Wars"
+        className="search-input"
       />
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+        <ul className="films-list">
           {data.results.map((movie) => (
             <li key={movie.id}>
-              <p>{movie.title}</p>
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
-                className="swiper-image"
               />
+              <p className="films-title">
+                <b>{movie.title}</b>
+              </p>
             </li>
           ))}
         </ul>
